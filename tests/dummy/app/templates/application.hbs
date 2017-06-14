@@ -1,0 +1,22 @@
+<h1>Drag and Drop Demo</h1>
+
+<h2>Draggable Element Component</h2>
+{{#draggable-image
+	draggingClassName='isDragging'
+	content=imageBinaryData }}
+{{/draggable-image}}
+
+<h2>Drop Area Component</h2>
+{{#drop-area
+	dragOverClassName='isDropping'
+	dropped='imageDropped'
+	as |target| }}
+	{{#if target.content}}
+		<object type="image/jpeg" width="100" height="100" data={{target.content}}></object>
+	{{/if}}
+{{/drop-area}}
+
+
+<p class='image-test'>
+Test Test
+</p>
